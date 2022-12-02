@@ -61,3 +61,15 @@ func TestDetermineMostCaloriesChallenge(t *testing.T) {
 		t.Errorf("got %d want %d", got, want)
 	}
 }
+
+func TestDetermineMostCaloriesChallenge2(t *testing.T) {
+	// Sample data from challenge 
+	elveCalories := fileTo2DimensionalSliceInts("challenge.txt");
+
+	got := determineTotalOf3MostCalories(elveCalories)
+	want := 207148
+
+	if got != want {
+		t.Errorf("got %d want %d", got, want)
+	}
+}
