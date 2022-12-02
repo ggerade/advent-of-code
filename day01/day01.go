@@ -17,6 +17,6 @@ func determineMostCalories(elveCalories [][]int) int {
 }
 
 func main() {
-    elveCalories := [][]int {{1000}}
+    elveCalories := fileTo2DimensionalSliceInts("challenge.txt");
     fmt.Println(determineMostCalories(elveCalories))
 }
