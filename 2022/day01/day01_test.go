@@ -23,7 +23,7 @@ func TestDetermineMostCalories(t *testing.T) {
 }
 
 func TestFileRead(t *testing.T) {
-	got := fileTo2DimensionalSliceInts("example_input.txt");
+	got := fileTo2DimensionalSliceInts("inputs/example.txt");
 	// Sample data from challenge 
 	want := [][]int {  
 		{ 1000, 2000, 3000 },
@@ -40,7 +40,7 @@ func TestFileRead(t *testing.T) {
 
 func TestDetermineMostCaloriesFromFile(t *testing.T) {
 	// Sample data from challenge 
-	elveCalories := fileTo2DimensionalSliceInts("example_input.txt");
+	elveCalories := fileTo2DimensionalSliceInts("inputs/example.txt");
 
 	got := determineMostCalories(elveCalories)
 	want := 24000
@@ -52,7 +52,7 @@ func TestDetermineMostCaloriesFromFile(t *testing.T) {
 
 func TestDetermineMostCaloriesChallenge(t *testing.T) {
 	// Sample data from challenge 
-	elveCalories := fileTo2DimensionalSliceInts("challenge.txt");
+	elveCalories := fileTo2DimensionalSliceInts("inputs/challenge.txt");
 
 	got := determineMostCalories(elveCalories)
 	want := 70720
@@ -64,7 +64,7 @@ func TestDetermineMostCaloriesChallenge(t *testing.T) {
 
 func TestDetermineMostCaloriesChallenge2(t *testing.T) {
 	// Sample data from challenge 
-	elveCalories := fileTo2DimensionalSliceInts("challenge.txt");
+	elveCalories := fileTo2DimensionalSliceInts("inputs/challenge.txt");
 
 	got := determineTotalOf3MostCalories(elveCalories)
 	want := 207148

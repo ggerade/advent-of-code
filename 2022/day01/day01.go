@@ -35,7 +35,7 @@ func determineTotalOf3MostCalories(elveCalories [][]int) int {
 }
 
 func main() {
-    elveCalories := fileTo2DimensionalSliceInts("challenge.txt");
+    elveCalories := fileTo2DimensionalSliceInts("inputs/challenge.txt");
     most := determineMostCalories(elveCalories)
     fmt.Printf("Most calories: %d\n", most);
     most3 := determineTotalOf3MostCalories(elveCalories)
