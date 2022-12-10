@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 
 	"github.com/icza/backscanner"
@@ -20,8 +21,7 @@ func readStacks(filename string) []Stack {
 	}
 	fileInfo, err := file.Stat()
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 	defer file.Close()
 
@@ -31,7 +31,7 @@ func readStacks(filename string) []Stack {
 		line, _, err := scanner.LineBytes()
 		if err != nil {
 			if err != io.EOF {
-				fmt.Println("Error:", err)
+				log.Fatal("Error:", err)
 			}
 			break
 		}

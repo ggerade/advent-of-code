@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"unicode/utf8"
@@ -14,8 +14,7 @@ func fileTo2DimensionalSliceInts(filename string) [][]int {
 
 	readFile, err := os.Open(filename)
 	if err != nil {
-			fmt.Println(err)
-			// and???
+			log.Fatal(err)
 	}
 	fileScanner := bufio.NewScanner(readFile)
 	fileScanner.Split(bufio.ScanLines)
@@ -25,7 +24,7 @@ func fileTo2DimensionalSliceInts(filename string) [][]int {
 		if (utf8.RuneCountInString(line) > 0) {
 			n, err := strconv.Atoi(line)
 			if err != nil {
-				fmt.Println(err)
+				log.Fatal(err)
 			}	else {
 				inner = append(inner, n)
 			}

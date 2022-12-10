@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strconv"
@@ -14,8 +15,7 @@ func readAssignments(filename string) []Assignment {
 
 	readFile, err := os.Open(filename)
 	if err != nil {
-		fmt.Println(err)
-		// and???
+		log.Fatal(err)
 	}
 	defer readFile.Close()
 

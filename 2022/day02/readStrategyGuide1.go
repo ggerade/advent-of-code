@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fmt"
+	"log"
 	"os"
 	"strings"
 )
@@ -22,8 +22,7 @@ func readStrategyGuide1(filename string) []Strategy1 {
 
 	readFile, err := os.Open(filename)
 	if err != nil {
-			fmt.Println(err)
-			// and???
+			log.Fatal(err)
 	}
 	fileScanner := bufio.NewScanner(readFile)
 	fileScanner.Split(bufio.ScanLines)

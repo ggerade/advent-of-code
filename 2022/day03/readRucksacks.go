@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fmt"
+	"log"
 	"os"
 )
 
@@ -12,8 +12,7 @@ func readRucksacks(filename string) []string {
 
 	readFile, err := os.Open(filename)
 	if err != nil {
-		fmt.Println(err)
-		// and???
+		log.Fatal(err)
 	}
 	defer readFile.Close()
 

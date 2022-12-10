@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strconv"
@@ -19,12 +19,10 @@ func readInstructions(filename string) []Instruction {
 
 	file, err := os.Open(filename)
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 	defer file.Close()
 
@@ -46,8 +44,7 @@ func readInstructions(filename string) []Instruction {
 func atoi(a string) int {
 	i, err := strconv.Atoi(a)
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 	return i;
 }
